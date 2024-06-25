@@ -1,0 +1,233 @@
+
+package bank.management.system;
+
+import java.util.*;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class SignupTwo extends JFrame implements ActionListener{
+    
+   
+    JTextField pannoTextField, aadharnoTextField;
+    JButton next;
+    JRadioButton syes, sno, eyes, eno;
+    
+    JComboBox religion, category, income, occupation, education;
+    String formno;
+    
+    
+    SignupTwo(String formno){
+        this.formno = formno;
+        setLayout(null);
+        
+        setTitle("NEW ACCOUNT APPLICATION FORM - PAGE 2");
+        
+        
+        
+        
+        JLabel additionalDetails = new JLabel("Page 2: Additional Details");
+        additionalDetails.setFont(new Font("Raleway", Font.BOLD, 22));
+        additionalDetails.setBounds(290, 80, 400, 30);
+        add(additionalDetails);
+        
+        JLabel religionLabel = new JLabel("Religion:");
+        religionLabel.setFont(new Font("Raleway", Font.BOLD, 20));
+        religionLabel.setBounds(100, 140, 100, 30);
+        add(religionLabel);
+
+        String valReligion[] = {"Hindu", "Muslim", "Sikh", "Christian", "Other"};
+        religion = new JComboBox(valReligion);
+        religion.setBounds(300, 140, 400, 30);
+        religion.setBackground(Color.WHITE);
+        add(religion);
+
+        JLabel categoryLabel = new JLabel("Category:");
+        categoryLabel.setFont(new Font("Raleway", Font.BOLD, 20));
+        categoryLabel.setBounds(100, 190, 200, 30);
+        add(categoryLabel);
+
+        String valCategory[] = {"General", "OBC", "SC", "ST", "Other"};
+        category = new JComboBox(valCategory);
+        category.setBounds(300, 190, 400, 30);
+        category.setBackground(Color.WHITE);
+        add(category);
+
+        
+        JLabel incomeLabel = new JLabel("Income:");
+        incomeLabel.setFont(new Font("Raleway", Font.BOLD, 20));
+        incomeLabel.setBounds(100, 240, 200, 30);
+        add(incomeLabel);
+        
+        String incomecategory[] = {"Null", "<1,50,000", "<2,50,000", "5,00,000", "upto 10,00,000"};
+        income = new JComboBox(incomecategory);
+        income.setBounds(300, 240, 400, 30);
+        income.setBackground(Color.WHITE);
+        add(income);
+        
+        
+        JLabel educationLabel = new JLabel("Educational");
+        educationLabel.setFont(new Font("Raleway", Font.BOLD, 20));
+        educationLabel.setBounds(100, 290, 200, 30);
+        add(educationLabel);
+
+        String educationValues[] = {"Null", "Graduate", "Post Graduation", "Doctorate", "Other"};
+        education = new JComboBox(educationValues);
+        education.setBounds(300, 315, 400, 30);
+        education.setBackground(Color.WHITE);
+        add(education);
+        
+        JLabel email = new JLabel("Qualification:");
+        email.setFont(new Font("Raleway", Font.BOLD, 20));
+        email.setBounds(100, 320, 200, 30);
+        add(email);
+        
+        
+        JLabel occupationLabel = new JLabel("Occupation:");
+        occupationLabel.setFont(new Font("Raleway", Font.BOLD, 20));
+        occupationLabel.setBounds(100, 390, 200, 30);
+        add(occupationLabel);
+        
+        String occupationValues[] = {"Salaried", "Self-Employed", "Bussiness", "Student", "Other"};
+        occupation = new JComboBox(occupationValues);
+        occupation.setBounds(300, 390, 400, 30);
+        occupation.setBackground(Color.WHITE);
+        add(occupation);
+        
+        JLabel panno = new JLabel("PAN No:");
+        panno.setFont(new Font("Raleway", Font.BOLD, 20));
+        panno.setBounds(100, 440, 200, 30);
+        add(panno);
+        
+        pannoTextField = new JTextField();
+        pannoTextField.setFont(new Font("Raleway", Font.BOLD,20));
+        pannoTextField.setBounds(300, 440, 400, 30);
+        add(pannoTextField);
+        
+        
+        JLabel aadharno = new JLabel("Aadhar No:");
+        aadharno.setFont(new Font("Raleway", Font.BOLD, 20));
+        aadharno.setBounds(100, 490, 200, 30);
+        add(aadharno);
+        
+        aadharnoTextField = new JTextField();
+        aadharnoTextField.setFont(new Font("Raleway", Font.BOLD,20));
+        aadharnoTextField.setBounds(300, 490, 400, 30);
+        add(aadharnoTextField);
+        
+        JLabel seniorcitizenLabel = new JLabel("Senior Citizen:");
+        seniorcitizenLabel.setFont(new Font("Raleway", Font.BOLD, 20));
+        seniorcitizenLabel.setBounds(100, 540, 200, 30);
+        add(seniorcitizenLabel);
+        
+        syes = new JRadioButton("Yes");
+        syes.setBounds(300, 540, 100, 30);
+        syes.setBackground(Color.WHITE);
+        add(syes);
+        
+        sno = new JRadioButton("No");
+        sno.setBounds(450, 540, 100, 30);
+        sno.setBackground(Color.WHITE);
+        add(sno);
+        
+        ButtonGroup seniorcitizen = new ButtonGroup();
+        seniorcitizen.add(syes);
+        seniorcitizen.add(sno);
+        
+        JLabel pincode = new JLabel("Existing Account:");
+        pincode.setFont(new Font("Raleway", Font.BOLD, 20));
+        pincode.setBounds(100, 590, 200, 30);
+        add(pincode);
+        
+        eyes = new JRadioButton("Yes");
+        eyes.setBounds(300, 590, 100, 30);
+        eyes.setBackground(Color.WHITE);
+        add(eyes);
+        
+        eno = new JRadioButton("No");
+        eno.setBounds(450, 590, 100, 30);
+        eno.setBackground(Color.WHITE);
+        add(eno);
+        
+        ButtonGroup existingaccount = new ButtonGroup();
+        existingaccount.add(eyes);
+        existingaccount.add(eno);
+        
+        next = new JButton("Next");
+        next.setBackground(Color.BLACK);
+        next.setForeground(Color.WHITE);
+        next.setFont(new Font("Raleway", Font.BOLD, 14));
+        next.setBounds(620, 660, 80, 30);
+        next.addActionListener(this);
+        add(next);
+        
+        getContentPane().setBackground(Color.white);
+        
+        setSize(850, 800);
+        setLocation(350, 10);
+        setUndecorated(true);
+        setVisible(true);
+        
+
+    }
+    public void actionPerformed(ActionEvent ae){
+        String sreligion = (String) religion.getSelectedItem(); 
+        String scategory = (String) category.getSelectedItem();
+        String sincome = (String) income.getSelectedItem();
+        String seducation = (String) education.getSelectedItem();
+        String soccupation = (String) occupation.getSelectedItem();
+        String seniorcitizen = null;
+        if (syes.isSelected()){
+            seniorcitizen = "Yes";
+        } else if (sno.isSelected()){
+            seniorcitizen = "No";
+        }
+        
+        
+        String existingaccount = null;
+        if(eyes.isSelected()){
+            existingaccount = "Yes";
+        }else if (eno.isSelected()){
+            existingaccount = "No";
+        }
+        
+        String spanno = pannoTextField.getText();
+        String saadharno = aadharnoTextField.getText();
+        
+        try{
+            if(religion.equals("")){
+                JOptionPane.showMessageDialog(null, "Religion is Required");
+            }else if (category.equals("")){
+                JOptionPane.showMessageDialog(null, "Category is Required");
+            }else if (income.equals("")){
+                JOptionPane.showMessageDialog(null, "Income is Required");
+            }else if (education.equals("")){
+                JOptionPane.showMessageDialog(null, "Education is Required");
+            }else if (occupation.equals("")){
+                JOptionPane.showMessageDialog(null, "Occupation is Required");
+            }
+            else{
+                Conn c = new Conn();
+                // Assuming your table 'signup' has columns: formno, name, fname, dob, gender, email, address, city, pincode, state
+                String query = "insert into signuptwo values ('" + formno + "', '" + sreligion + "', '" + scategory + "', '" + sincome + "', '" + seducation + "', '" + soccupation + "', '" + spanno + "', '" + saadharno + "', '" + seniorcitizen + "', '" + existingaccount + "')";
+
+                c.s.executeUpdate(query);
+                
+                //Signup3 Object
+                setVisible(false);
+                new SignupThree(formno).setVisible(true);
+            }
+    }
+        catch(Exception e){
+            System.out.println(e);
+        }
+            
+        }
+
+    public static void main(String args[]) {
+        
+        new SignupTwo("");
+
+    }
+}
+ 
